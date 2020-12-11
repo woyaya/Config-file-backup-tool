@@ -3,15 +3,17 @@
 BACKUP_LIST=(/etc/apache2 
 	/home/www/conf 
 	/home/www/data/pages
-	'/home/www/data/attic#--exclude _dummy'
-	'/home/www/data/media*#--exclude _dummy'
-	'/home/www/data/meta#--exclude _dummy'
-	'/home/homeassistant/.homeassistant#--exclude *.db* --exclude .storage --exclude *.log'
+	'/home/www/data/attic&--exclude _dummy'
+	'/home/www/data/media*&--exclude _dummy'
+	'/home/www/data/meta&--exclude _dummy'
+	/home/homeassistant/node-red
+	/home/homeassistant/esphome/*.yaml
+	'/home/homeassistant/hassio&--exclude *.db* --exclude .storage --exclude *.log* --exclude .git --exclude *backup --exclude test --exclude log --exclude tmp'
 	)
 
 echo "${BACKUP_LIST[@]}"
 
-BACKUP_SERVER="root@192.168.1.2:/mnt/SSD_120G/Backup"
+BACKUP_SERVER="root@192.168.1.2:/mnt/SSD_120G/Backup/X96Max"
 LABEL=backup	#block device label for backup
 
 LOGFILE=/tmp/`basename $0`.log
@@ -60,8 +62,8 @@ number=`expr ${#BACKUP_LIST[@]} "-" 1`
 for index in `seq 0 $number`
 do
 	NAME=${BACKUP_LIST[$index]}
-	param=`echo "$NAME" | sed 's/.*#//'`
-	name=`echo "$NAME" | sed 's/#.*//'`
+	param=`echo "$NAME" | sed 's/.*&//'`
+	name=`echo "$NAME" | sed 's/&.*//'`
 	# Backup to local device
 	[ -n "$BACKUP_DEV" ] && {
 		DST=`dirname ${MOUNT}$name`
