@@ -1,6 +1,12 @@
 #/bin/bash
 # variables define
 BACKUP_LIST=(/etc/apache2 
+	/etc/cups
+	/etc/docker
+	/etc/hp
+	/etc/mosquitto
+	/etc/network
+	/etc/samba
 	/home/www/conf 
 	/home/www/data/pages
 	'/home/www/data/attic&--exclude _dummy'
