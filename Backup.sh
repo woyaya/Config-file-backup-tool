@@ -14,7 +14,8 @@ BACKUP_LIST=(/etc/apache2
 	'/home/www/data/meta&--exclude _dummy'
 	/home/homeassistant/node-red
 	/home/homeassistant/esphome/*.yaml
-	'/home/homeassistant/hassio&--exclude *.db* --exclude .storage --exclude *.log* --exclude .git --exclude *backup --exclude test --exclude log --exclude tmp'
+	/home/homeassistant/esphome/SRC
+	'/home/homeassistant/hassio&--exclude *.db* --exclude *.log* --exclude .git --exclude *backup --exclude test --exclude log --exclude tmp'
 	)
 
 echo "${BACKUP_LIST[@]}"
