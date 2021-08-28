@@ -1,0 +1,14 @@
+SOURCE=(/etc/apache2 
+	/etc/docker
+	/etc/mosquitto
+	/etc/network
+	/etc/samba
+	/home/www/dokuwiki/conf 
+	/home/www/dokuwiki/data/pages
+	'/home/www/dokuwiki/data/attic&--exclude _dummy'
+	'/home/www/dokuwiki/data/media*&--exclude _dummy'
+	'/home/www/dokuwiki/data/meta&--exclude _dummy'
+	/home/homeassistant/esphome/*.yaml
+	/home/homeassistant/esphome/SRC
+	'/home/homeassistant/hassio&--exclude *.db* --exclude *.log* --exclude .git --exclude *backup --exclude test --exclude log --exclude tmp')
+DIST=/home/Backup/GeminiM

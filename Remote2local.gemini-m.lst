@@ -1,0 +1,5 @@
+SOURCE=(kingwoo@192.168.1.11:/home/Backup/GeminiM/
+	kingwoo@192.168.1.11:/home/share/home
+	kingwoo@192.168.1.11:/home/share/WRT1200
+)
+DIST=/home/share
